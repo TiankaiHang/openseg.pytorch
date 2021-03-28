@@ -44,8 +44,8 @@ LOG_FILE="./log/cityscapes/${CHECKPOINTS_NAME}.log"
 echo "Logging to $LOG_FILE"
 mkdir -p `dirname $LOG_FILE`
 
-PRETRAINED_MODEL="./pretrained_model/hrnetv2_w48_imagenet_pretrained.pth"
-
+#PRETRAINED_MODEL="./pretrained_model/hrnetv2_w48_imagenet_pretrained.pth"
+PRETRAINED_MODEL=0
 
 if [ "$1"x == "train"x ]; then
   ${PYTHON} -u main.py --configs ${CONFIGS} --drop_last y --test_interval 2000 \

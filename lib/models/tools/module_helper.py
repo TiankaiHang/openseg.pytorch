@@ -124,6 +124,11 @@ class ModuleHelper(object):
         if pretrained is None:
             return model
 
+        try:
+            pretrained_dict = torch.load(pretrained)
+        except:
+            return model
+
         if all_match:
             Log.info('Loading pretrained model:{}'.format(pretrained))
             pretrained_dict = torch.load(pretrained)
